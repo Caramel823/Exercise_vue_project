@@ -9,6 +9,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Exercise_vue_project/', //仓库名，前后都要有斜杠
   plugins: [
     vue(),
     vueDevTools(),
