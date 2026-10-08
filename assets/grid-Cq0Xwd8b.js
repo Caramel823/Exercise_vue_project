@@ -1,1 +1,0 @@
-import{E as e,H as t,S as n,T as r,n as i}from"./index-CupC92Ie.js";var a={},o={class:`layout`};function s(i,a){return t(),r(`div`,o,[...a[0]||=[e(` 1 `,-1),n(`div`,{class:`header`},null,-1),n(`div`,{class:`sidebar`},null,-1),n(`div`,{class:`main`},null,-1),n(`div`,{class:`footer`},null,-1)]])}var c=i(a,[[`render`,s],[`__scopeId`,`data-v-8224b8bc`]]);export{c as default};

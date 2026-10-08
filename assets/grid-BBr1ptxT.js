@@ -1,0 +1,1 @@
+import{H as e,S as t,T as n,n as r}from"./index-C0WUXivA.js";var i={},a={class:`layout`};function o(r,i){return e(),n(`div`,a,[...i[0]||=[t(`div`,{class:`header`},null,-1),t(`div`,{class:`sidebar`},null,-1),t(`div`,{class:`main`},null,-1),t(`div`,{class:`footer`},null,-1)]])}var s=r(i,[[`render`,o],[`__scopeId`,`data-v-3d77bdea`]]);export{s as default};
