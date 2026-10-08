@@ -2,10 +2,17 @@
     <h3>手写的迷你响应式系统</h3>
 </template>
 
-<script setup>
-let activeEffect = null;
+<script setup lang="ts">
+let activeEffect: Function | null = null;
 
-class Dep {
+type DepType = {
+    subscribers: Set<Function>;
+    depend: () => void;
+    notify: () => void;
+};
+
+class Dep implements DepType {
+    subscribers: Set<Function>;
     constructor () {
         this.subscribers = new Set();
     }
@@ -25,7 +32,7 @@ class Dep {
 // 把用户传入的函数包装成一个可被"记住"和"重新执行"的 effectFn，
 // 并在执行期间用 activeEffect 标记"当前是谁在读数据"，
 // 让 Proxy 能正确地建立依赖关系
-function effect (fn) {
+function effect (fn: Function) {
     const effectFn = () => {
         activeEffect = effectFn;
         fn();
@@ -34,7 +41,7 @@ function effect (fn) {
     effectFn();
 }
 
-function myReactive(target) {
+function myReactive(target: any) {
     const depsMap = new Map();
     return new Proxy(target, {
         get(target, key, receiver) {

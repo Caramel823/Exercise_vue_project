@@ -17,7 +17,7 @@ const router = createRouter({
     },
     {
       path: '/reactive_system',
-      component: () => import('@/views/reactive_system/index.vue')
+      component: () => import('@/views/reactiveSystem/index.vue')
     },
     {
       path: '/card',

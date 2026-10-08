@@ -21,7 +21,7 @@
                     {{ todoList.filter(item => item.completed).length || 0 }} / {{ todoList.length || 0 }}
                 </div>
             </template>
-            <el-empty v-else description="暂无任务"></el-empty>
+            <el-empty v-else description="暂无任务" />
         </el-card>
     </div>
 </template>
@@ -29,9 +29,15 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
 
+type TodoItem = {
+    id: string;
+    content: string;
+    completed: boolean;
+}
+
 const addInputRef = ref()
 const inputValue = ref('')
-const todoList = ref([])
+const todoList = ref<TodoItem[]>([])
 const initial = ref(true)
 
 // 新增任务
@@ -48,7 +54,7 @@ const handleAdd = () => {
 }
 
 // 切换任务完成状态
-const toggleTask = (todoItem) => {
+const toggleTask = (todoItem: TodoItem) => {
     if(!todoItem) return;
     if(todoItem.completed) {
         todoItem.completed = false;
@@ -58,7 +64,7 @@ const toggleTask = (todoItem) => {
 }
 
 // 删除任务
-const handleDelete = (todoItem) => {
+const handleDelete = (todoItem: TodoItem) => {
     const index = todoList.value.findIndex(item => item.id === todoItem.id);
     if (index !== -1) {
         todoList.value.splice(index, 1);
