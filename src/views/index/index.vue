@@ -50,7 +50,7 @@ const tableData = ref([
     },
     {
         id: uuidv4(),
-        title: 'Grif布局',
+        title: 'Grid布局',
         description: 'grid布局练习',
         path: '/grid',
     },

@@ -1,6 +1,5 @@
 <template>
     <div class="layout">
-        1
         <div class="header"></div>
         <div class="sidebar"></div>
         <div class="main"></div>
